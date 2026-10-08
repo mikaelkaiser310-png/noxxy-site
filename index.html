@@ -7,315 +7,443 @@
 
 <style>
 :root{
-  color-scheme:dark;
-  --bg:#070812;
-  --surface:#101322;
-  --surface2:#15192b;
-  --text:#f5f7ff;
-  --muted:#a7aec7;
-  --line:#282e48;
-  --accent:#8b5cf6;
-  --accent2:#22d3ee;
+color-scheme:dark;
+--bg:#070812;
+--surface:#101322;
+--surface2:#15192b;
+--text:#f5f7ff;
+--muted:#a7aec7;
+--line:#282e48;
+--accent:#8b5cf6;
+--accent2:#22d3ee;
+--danger:#ff3d81
 }
 
 *{
-  box-sizing:border-box;
+box-sizing:border-box
 }
 
 html{
-  scroll-behavior:smooth;
+scroll-behavior:smooth
 }
 
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;
+margin:0;
+background:var(--bg);
+color:var(--text);
+font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif
 }
 
 .app{
-  min-height:100vh;
-  background:
-    radial-gradient(circle at 20% 0%,#24154d 0,transparent 34%),
-    radial-gradient(circle at 90% 20%,#073746 0,transparent 30%),
-    var(--bg);
+min-height:100vh;
+background:
+radial-gradient(circle at 20% 0%,#24154d 0,transparent 34%),
+radial-gradient(circle at 90% 20%,#073746 0,transparent 30%),
+var(--bg)
 }
 
 .container{
-  width:min(1120px,92%);
-  margin:auto;
+width:min(1120px,92%);
+margin:auto
 }
 
-/* NAVIGATION */
-
 .nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:22px 0;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:22px 0
 }
 
 .brand{
-  font-weight:1000;
-  letter-spacing:.12em;
-  font-size:24px;
+font-weight:1000;
+letter-spacing:.12em;
+font-size:24px
 }
 
 .brand span{
-  color:var(--accent2);
+color:var(--accent2)
 }
 
 .nav a{
-  color:var(--muted);
-  text-decoration:none;
-  margin-left:24px;
-  font-size:14px;
+color:var(--muted);
+text-decoration:none;
+margin-left:24px;
+font-size:14px
 }
 
-/* HERO */
-
 .hero{
-  padding:70px 0 54px;
-  text-align:center;
+padding:70px 0 54px;
+text-align:center
 }
 
 .badge{
-  display:inline-flex;
-  padding:8px 13px;
-  border:1px solid #3b3560;
-  border-radius:999px;
-  background:#15112b;
-  color:#cfc6ff;
-  font-size:13px;
+display:inline-flex;
+padding:8px 13px;
+border:1px solid #3b3560;
+border-radius:999px;
+background:#15112b;
+color:#cfc6ff;
+font-size:13px
 }
 
 .hero h1{
-  font-size:clamp(58px,12vw,130px);
-  line-height:.88;
-  margin:22px 0 16px;
-  letter-spacing:-.08em;
+font-size:clamp(58px,12vw,130px);
+line-height:.88;
+margin:22px 0 16px;
+letter-spacing:-.08em
 }
 
 .gradient{
-  background:linear-gradient(90deg,#fff,#a78bfa,#22d3ee);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
+background:linear-gradient(90deg,#fff,#a78bfa,#22d3ee);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent
 }
 
 .hero p{
-  max-width:680px;
-  margin:0 auto;
-  color:var(--muted);
-  font-size:18px;
-  line-height:1.65;
+max-width:680px;
+margin:0 auto;
+color:var(--muted);
+font-size:18px;
+line-height:1.65
 }
 
-/* BUTTONS */
-
 .actions{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:28px;
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:28px
 }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  padding:13px 18px;
-  border-radius:13px;
-  text-decoration:none;
-  color:white;
-  font-weight:800;
-  border:1px solid var(--line);
-  background:var(--surface2);
-  transition:.2s;
+display:inline-flex;
+align-items:center;
+gap:9px;
+padding:13px 18px;
+border-radius:13px;
+text-decoration:none;
+color:white;
+font-weight:800;
+border:1px solid var(--line);
+background:var(--surface2);
+transition:.2s
 }
 
 .btn:hover{
-  transform:translateY(-2px);
-  border-color:#596182;
+transform:translateY(-2px);
+border-color:#596182
 }
 
 .primary{
-  background:linear-gradient(135deg,#7c3aed,#0891b2);
-  border:0;
+background:linear-gradient(135deg,#7c3aed,#0891b2);
+border:0
 }
 
-/* SECTIONS */
-
 .section{
-  padding:34px 0 80px;
+padding:34px 0 80px
 }
 
 .section h2{
-  font-size:32px;
-  margin:0 0 8px;
+font-size:32px;
+margin:0 0 8px
 }
 
 .section .lead{
-  color:var(--muted);
-  margin:0 0 26px;
+color:var(--muted);
+margin:0 0 26px
 }
 
-/* CARDS */
-
 .grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px
 }
 
 .card{
-  background:linear-gradient(180deg,#121628,#0e1120);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:24px;
-  min-height:180px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  box-shadow:0 18px 45px #0004;
+background:linear-gradient(180deg,#121628,#0e1120);
+border:1px solid var(--line);
+border-radius:22px;
+padding:24px;
+min-height:180px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+box-shadow:0 18px 45px #0004
 }
 
 .icon{
-  font-size:35px;
+font-size:35px
 }
 
 .card h3{
-  margin:13px 0 7px;
-  font-size:22px;
+margin:13px 0 7px;
+font-size:22px
 }
 
 .card p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.5;
+margin:0;
+color:var(--muted);
+line-height:1.5
 }
 
 .card a{
-  margin-top:20px;
-  color:white;
-  text-decoration:none;
-  font-weight:800;
+margin-top:20px;
+color:white;
+text-decoration:none;
+font-weight:800
 }
 
-/* PARCOURS */
-
 .timeline{
-  position:relative;
-  margin-top:30px;
+position:relative;
+margin-top:30px
 }
 
 .timeline:before{
-  content:"";
-  position:absolute;
-  left:16px;
-  top:0;
-  bottom:0;
-  width:2px;
-  background:linear-gradient(#8b5cf6,#22d3ee);
+content:"";
+position:absolute;
+left:16px;
+top:0;
+bottom:0;
+width:2px;
+background:linear-gradient(#8b5cf6,#22d3ee)
 }
 
 .step{
-  position:relative;
-  padding:0 0 28px 52px;
+position:relative;
+padding:0 0 28px 52px
 }
 
 .dot{
-  position:absolute;
-  left:7px;
-  top:5px;
-  width:20px;
-  height:20px;
-  border-radius:50%;
-  background:#11152a;
-  border:5px solid var(--accent2);
-  box-shadow:0 0 22px #22d3ee66;
+position:absolute;
+left:7px;
+top:5px;
+width:20px;
+height:20px;
+border-radius:50%;
+background:#11152a;
+border:5px solid var(--accent2);
+box-shadow:0 0 22px #22d3ee66
 }
 
 .year{
-  font-size:12px;
-  color:var(--accent2);
-  font-weight:900;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+font-size:12px;
+color:var(--accent2);
+font-weight:900;
+letter-spacing:.12em;
+text-transform:uppercase
 }
 
 .step h3{
-  margin:5px 0 5px;
-  font-size:21px;
+margin:5px 0 5px;
+font-size:21px
 }
 
 .step p{
-  margin:0;
-  color:var(--muted);
-  line-height:1.55;
+margin:0;
+color:var(--muted);
+line-height:1.55
 }
 
-/* JEUX */
+.footer{
+border-top:1px solid var(--line);
+padding:28px 0;
+color:var(--muted);
+font-size:13px;
+display:flex;
+justify-content:space-between;
+gap:20px;
+flex-wrap:wrap
+}
 
 .games{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+display:flex;
+flex-wrap:wrap;
+gap:10px
 }
 
 .tag{
-  padding:9px 12px;
-  border-radius:999px;
-  background:#12172a;
-  border:1px solid var(--line);
-  color:#d7dcf2;
-  font-size:13px;
+padding:9px 12px;
+border-radius:999px;
+background:#12172a;
+border:1px solid var(--line);
+color:#d7dcf2;
+font-size:13px
 }
 
-/* FOOTER */
-
-.footer{
-  border-top:1px solid var(--line);
-  padding:28px 0;
-  color:var(--muted);
-  font-size:13px;
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
+.copy{
+cursor:pointer
 }
-
-/* MOBILE */
 
 @media(max-width:760px){
+.grid{
+grid-template-columns:1fr
+}
 
-  .grid{
-    grid-template-columns:1fr;
-  }
+.nav a{
+margin-left:10px
+}
 
-  .nav a{
-    margin-left:10px;
-  }
+.hero{
+padding-top:48px
+}
 
-  .hero{
-    padding-top:48px;
-  }
+.hero h1{
+font-size:72px
+}
 
-  .hero h1{
-    font-size:72px;
-  }
+.footer{
+display:block
+}
 
-  .footer{
-    display:block;
-  }
-
-  .footer div+div{
-    margin-top:8px;
-  }
-
+.footer div+div{
+margin-top:8px
+}
 }
 </style>
+
+<style>
+.media-frame{
+position:relative;
+overflow:hidden;
+border:1px solid var(--line);
+border-radius:22px;
+background:#090b16;
+box-shadow:0 18px 45px #0004
+}
+
+.media-frame iframe{
+display:block;
+width:100%;
+aspect-ratio:16/9;
+border:0
+}
+
+.media-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
+margin-top:16px
+}
+
+.media-card{
+background:linear-gradient(180deg,#121628,#0e1120);
+border:1px solid var(--line);
+border-radius:22px;
+padding:24px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px
+}
+
+.media-card h3{
+margin:0 0 7px;
+font-size:21px
+}
+
+.media-card p{
+margin:0;
+color:var(--muted);
+line-height:1.5
+}
+
+.media-card a{
+color:white;
+text-decoration:none;
+font-weight:800;
+white-space:nowrap
+}
+
+.media-note{
+margin-top:12px;
+color:var(--muted);
+font-size:13px
+}
+
+@media(max-width:760px){
+.media-grid{
+grid-template-columns:1fr
+}
+
+.media-card{
+display:block
+}
+
+.media-card a{
+display:inline-block;
+margin-top:16px
+}
+}
+
+.game-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+margin-top:28px
+}
+
+.game-card{
+display:block;
+overflow:hidden;
+position:relative;
+min-height:230px;
+border:1px solid var(--line);
+border-radius:22px;
+background:linear-gradient(180deg,#15192b,#0d1020);
+text-decoration:none;
+color:white;
+box-shadow:0 18px 45px #0004;
+transition:.2s
+}
+
+.game-card:hover{
+transform:translateY(-5px);
+border-color:#596182
+}
+
+.game-card img{
+display:block;
+width:100%;
+height:145px;
+object-fit:contain;
+padding:24px;
+background:radial-gradient(circle at center,#252b49,#090b15)
+}
+
+.game-info{
+padding:16px 18px 18px
+}
+
+.game-info h3{
+margin:0 0 5px;
+font-size:20px
+}
+
+.game-info span{
+color:var(--muted);
+font-size:13px
+}
+
+.game-arrow{
+float:right;
+color:var(--accent2);
+font-weight:900
+}
+
+@media(max-width:900px){
+.game-grid{
+grid-template-columns:repeat(2,1fr)
+}
+}
+
+@media(max-width:600px){
+.game-grid{
+grid-template-columns:1fr
+}
+}
+</style>
+
 </head>
 
 <body>
@@ -332,12 +460,12 @@ NOXX<span>Y</span>
 
 <nav>
 <a href="#reseaux">Réseaux</a>
+<a href="#videos">Vidéos</a>
 <a href="#parcours">Parcours</a>
 <a href="#jeux">Jeux</a>
 </nav>
 
 </header>
-
 
 <main>
 
@@ -355,8 +483,7 @@ NOXX<span>Y</span>
 
 <p>
 Bienvenue sur le hub officiel de Noxxy-A2F.
-Retrouve mes contenus, mes lives, ma communauté
-et mes différents réseaux au même endroit.
+Retrouve mes contenus, mes lives, ma communauté et mes différents réseaux au même endroit.
 </p>
 
 <div class="actions">
@@ -388,9 +515,7 @@ target="_blank">
 
 <section class="section" id="reseaux">
 
-<h2>
-Mes réseaux
-</h2>
+<h2>Mes réseaux</h2>
 
 <p class="lead">
 Un clic pour rejoindre Noxxy sur chaque plateforme.
@@ -398,18 +523,13 @@ Un clic pour rejoindre Noxxy sur chaque plateforme.
 
 <div class="grid">
 
-
 <article class="card">
 
 <div>
 
-<div class="icon">
-▶️
-</div>
+<div class="icon">▶️</div>
 
-<h3>
-YouTube
-</h3>
+<h3>YouTube</h3>
 
 <p>
 Vidéos, Shorts, gaming et futures séries.
@@ -430,13 +550,9 @@ Ouvrir la chaîne →
 
 <div>
 
-<div class="icon">
-🎵
-</div>
+<div class="icon">🎵</div>
 
-<h3>
-TikTok
-</h3>
+<h3>TikTok</h3>
 
 <p>
 Clips courts, moments gaming et contenu rapide.
@@ -457,13 +573,9 @@ Ouvrir TikTok →
 
 <div>
 
-<div class="icon">
-🟣
-</div>
+<div class="icon">🟣</div>
 
-<h3>
-Twitch
-</h3>
+<h3>Twitch</h3>
 
 <p>
 Lives, sessions gaming et interaction avec la communauté.
@@ -484,13 +596,87 @@ Ouvrir Twitch →
 </section>
 
 
+<!-- VIDEOS -->
+
+<section class="section" id="videos">
+
+<h2>Mes vidéos</h2>
+
+<p class="lead">
+Les dernières publications de Noxxy-A2F et mes meilleurs contenus courts.
+</p>
+
+<div class="media-frame">
+
+<iframe
+src="https://www.youtube.com/embed?listType=user_uploads&amp;list=Noxxy-A2F"
+title="Dernières vidéos de Noxxy-A2F"
+loading="lazy"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<p class="media-note">
+Le lecteur YouTube affiche les vidéos publiées sur la chaîne.
+Le bouton ci-dessous permet aussi d'ouvrir directement la chaîne.
+</p>
+
+<div class="media-grid">
+
+
+<article class="media-card">
+
+<div>
+
+<h3>🎵 TikTok</h3>
+
+<p>
+Retrouve mes TikTok publics, clips et formats courts sur @noxxy663.
+</p>
+
+</div>
+
+<a
+href="https://www.tiktok.com/@noxxy663"
+target="_blank">
+Voir les TikTok →
+</a>
+
+</article>
+
+
+<article class="media-card">
+
+<div>
+
+<h3>🟣 Clips Twitch</h3>
+
+<p>
+Clips publics récents : Forza Horizon 6, Rocket League et autres moments de live.
+</p>
+
+</div>
+
+<a
+href="https://www.twitch.tv/noxxy7709/clips"
+target="_blank">
+Voir les clips →
+</a>
+
+</article>
+
+</div>
+
+</section>
+
+
 <!-- PARCOURS -->
 
 <section class="section" id="parcours">
 
-<h2>
-Mon parcours
-</h2>
+<h2>Mon parcours</h2>
 
 <p class="lead">
 De joueur passionné à créateur gaming multi-plateforme.
@@ -512,8 +698,7 @@ Chapitre 2 — Saison 7
 </h3>
 
 <p>
-Début du parcours gaming sur Fortnite et développement
-progressif du niveau de jeu.
+Début du parcours gaming sur Fortnite et développement progressif du niveau de jeu.
 </p>
 
 </div>
@@ -532,8 +717,7 @@ Période compétitive
 </h3>
 
 <p>
-Recherche de progression, intérêt pour les tournois
-et environnement EOZ Esport.
+Recherche de progression, intérêt pour les tournois et environnement EOZ Esport.
 </p>
 
 </div>
@@ -552,8 +736,7 @@ Création de contenu
 </h3>
 
 <p>
-Le gaming devient aussi un projet de création :
-clips, vidéos et développement d'une identité.
+Le gaming devient aussi un projet de création : clips, vidéos et développement d'une identité.
 </p>
 
 </div>
@@ -572,8 +755,7 @@ Multi-plateforme
 </h3>
 
 <p>
-Développement des différents comptes pour toucher
-une audience et créer une communauté.
+Développement des différents comptes pour toucher une audience et créer une communauté.
 </p>
 
 </div>
@@ -592,8 +774,7 @@ une audience et créer une communauté.
 </h3>
 
 <p>
-Structuration de la marque, Discord, séries YouTube,
-formats courts et volonté de professionnaliser la production.
+Structuration de la marque, Discord, séries YouTube, formats courts et volonté de professionnaliser la production.
 </p>
 
 </div>
@@ -608,39 +789,183 @@ formats courts et volonté de professionnaliser la production.
 
 <section class="section" id="jeux">
 
-<h2>
-Univers gaming
-</h2>
+<h2>Univers gaming</h2>
 
 <p class="lead">
 Les jeux associés au contenu et aux centres d'intérêt de Noxxy.
+Clique sur un jeu pour accéder à son site officiel.
 </p>
 
-<div class="games">
+<div class="game-grid">
 
-<span class="tag">
+
+<!-- FORTNITE -->
+
+<a
+class="game-card"
+href="https://www.fortnite.com/"
+target="_blank"
+rel="noopener">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fortnite.png"
+alt="Fortnite">
+
+<div class="game-info">
+
+<h3>
 Fortnite
+<span class="game-arrow">↗</span>
+</h3>
+
+<span>
+Site officiel
 </span>
 
-<span class="tag">
+</div>
+
+</a>
+
+
+<!-- ROCKET LEAGUE -->
+
+<a
+class="game-card"
+href="https://www.rocketleague.com/"
+target="_blank"
+rel="noopener">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rocket_League_logo.svg"
+alt="Rocket League">
+
+<div class="game-info">
+
+<h3>
 Rocket League
+<span class="game-arrow">↗</span>
+</h3>
+
+<span>
+Site officiel
 </span>
 
-<span class="tag">
+</div>
+
+</a>
+
+
+<!-- FORZA HORIZON -->
+
+<a
+class="game-card"
+href="https://forza.net/fr-FR"
+target="_blank"
+rel="noopener">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Forza_logo_2020.svg"
+alt="Forza Horizon 5">
+
+<div class="game-info">
+
+<h3>
 Forza Horizon 5
+<span class="game-arrow">↗</span>
+</h3>
+
+<span>
+Site officiel Forza
 </span>
 
-<span class="tag">
+</div>
+
+</a>
+
+
+<!-- F1 25 -->
+
+<a
+class="game-card"
+href="https://www.ea.com/fr/games/f1/f1-25"
+target="_blank"
+rel="noopener">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/F1_25_logo.png"
+alt="F1 25">
+
+<div class="game-info">
+
+<h3>
 F1 25
+<span class="game-arrow">↗</span>
+</h3>
+
+<span>
+Site officiel EA
 </span>
 
-<span class="tag">
+</div>
+
+</a>
+
+
+<!-- CALL OF DUTY WARZONE -->
+
+<a
+class="game-card"
+href="https://www.callofduty.com/fr/warzone"
+target="_blank"
+rel="noopener">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Call_of_Duty_Warzone_Logo.png"
+alt="Call of Duty Warzone">
+
+<div class="game-info">
+
+<h3>
 Call of Duty: Warzone
+<span class="game-arrow">↗</span>
+</h3>
+
+<span>
+Site officiel Call of Duty
 </span>
 
-<span class="tag">
+</div>
+
+</a>
+
+
+<!-- ROBLOX -->
+
+<a
+class="game-card"
+href="https://www.roblox.com/"
+target="_blank"
+rel="noopener">
+
+<img
+src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Roblox_Logo_2025.png"
+alt="Roblox">
+
+<div class="game-info">
+
+<h3>
 Roblox
+<span class="game-arrow">↗</span>
+</h3>
+
+<span>
+Site officiel
 </span>
+
+</div>
+
+</a>
+
 
 </div>
 
@@ -648,6 +973,8 @@ Roblox
 
 </main>
 
+
+<!-- FOOTER -->
 
 <footer class="footer">
 
