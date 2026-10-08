@@ -1,0 +1,75 @@
+<style>
+.page-divider{
+    position:relative;
+    height:110px;
+    margin:0;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.page-divider:before{
+    content:"";
+    position:absolute;
+    left:-10%;
+    width:120%;
+    height:1px;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        #8b5cf6,
+        #22d3ee,
+        #8b5cf6,
+        transparent
+    );
+    box-shadow:0 0 18px #22d3ee88;
+    animation:dividerGlow 3s ease-in-out infinite;
+}
+
+.page-divider:after{
+    content:"NOXXY";
+    position:relative;
+    padding:9px 18px;
+    border:1px solid #3b3560;
+    border-radius:999px;
+    background:#0b0e1b;
+    color:#a7aec7;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:.28em;
+    box-shadow:0 0 30px #8b5cf633;
+    animation:dividerFloat 2.8s ease-in-out infinite;
+}
+
+@keyframes dividerGlow{
+    0%,100%{
+        transform:scaleX(.7);
+        opacity:.55;
+    }
+
+    50%{
+        transform:scaleX(1);
+        opacity:1;
+    }
+}
+
+@keyframes dividerFloat{
+    0%,100%{
+        transform:translateY(0);
+        box-shadow:0 0 20px #8b5cf622;
+    }
+
+    50%{
+        transform:translateY(-4px);
+        box-shadow:0 0 35px #22d3ee44;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+    .page-divider:before,
+    .page-divider:after{
+        animation:none;
+    }
+}
+</style>
