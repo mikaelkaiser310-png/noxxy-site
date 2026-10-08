@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NOXXY — Social Hub</title>
+<style>
+:root{color-scheme:dark;--bg:#070812;--surface:#101322;--surface2:#15192b;--text:#f5f7ff;--muted:#a7aec7;--line:#282e48;--accent:#8b5cf6;--accent2:#22d3ee;--danger:#ff3d81}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif}.app{min-height:100vh;background:radial-gradient(circle at 20% 0%,#24154d 0,transparent 34%),radial-gradient(circle at 90% 20%,#073746 0,transparent 30%),var(--bg)}
+.container{width:min(1120px,92%);margin:auto}.nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}.brand{font-weight:1000;letter-spacing:.12em;font-size:24px}.brand span{color:var(--accent2)}.nav a{color:var(--muted);text-decoration:none;margin-left:24px;font-size:14px}.hero{padding:70px 0 54px;text-align:center}.badge{display:inline-flex;padding:8px 13px;border:1px solid #3b3560;border-radius:999px;background:#15112b;color:#cfc6ff;font-size:13px}.hero h1{font-size:clamp(58px,12vw,130px);line-height:.88;margin:22px 0 16px;letter-spacing:-.08em}.gradient{background:linear-gradient(90deg,#fff,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{max-width:680px;margin:0 auto;color:var(--muted);font-size:18px;line-height:1.65}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 18px;border-radius:13px;text-decoration:none;color:white;font-weight:800;border:1px solid var(--line);background:var(--surface2);transition:.2s}.btn:hover{transform:translateY(-2px);border-color:#596182}.primary{background:linear-gradient(135deg,#7c3aed,#0891b2);border:0}.section{padding:34px 0 80px}.section h2{font-size:32px;margin:0 0 8px}.section .lead{color:var(--muted);margin:0 0 26px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:linear-gradient(180deg,#121628,#0e1120);border:1px solid var(--line);border-radius:22px;padding:24px;min-height:180px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 18px 45px #0004}.icon{font-size:35px}.card h3{margin:13px 0 7px;font-size:22px}.card p{margin:0;color:var(--muted);line-height:1.5}.card a{margin-top:20px;color:white;text-decoration:none;font-weight:800}.timeline{position:relative;margin-top:30px}.timeline:before{content:"";position:absolute;left:16px;top:0;bottom:0;width:2px;background:linear-gradient(#8b5cf6,#22d3ee)}.step{position:relative;padding:0 0 28px 52px}.dot{position:absolute;left:7px;top:5px;width:20px;height:20px;border-radius:50%;background:#11152a;border:5px solid var(--accent2);box-shadow:0 0 22px #22d3ee66}.year{font-size:12px;color:var(--accent2);font-weight:900;letter-spacing:.12em;text-transform:uppercase}.step h3{margin:5px 0 5px;font-size:21px}.step p{margin:0;color:var(--muted);line-height:1.55}.footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.games{display:flex;flex-wrap:wrap;gap:10px}.tag{padding:9px 12px;border-radius:999px;background:#12172a;border:1px solid var(--line);color:#d7dcf2;font-size:13px}.copy{cursor:pointer}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.nav a{margin-left:10px}.hero{padding-top:48px}.hero h1{font-size:72px}.footer{display:block}.footer div+div{margin-top:8px}}
+</style>
+
+<style>
+.media-frame{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#090b16;box-shadow:0 18px 45px #0004}.media-frame iframe{display:block;width:100%;aspect-ratio:16/9;border:0}.media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}.platform-preview{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#090b16;box-shadow:0 18px 45px #0004}.platform-preview iframe{display:block;width:100%;aspect-ratio:16/9;border:0}.platform-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 24px;background:linear-gradient(135deg,#14182a,#0b0e1b)}.platform-head h3{margin:0 0 6px;font-size:24px}.platform-head p{margin:0;color:var(--muted);line-height:1.5}.platform-head .btn{white-space:nowrap}.youtube-placeholder{min-height:430px;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px;background:radial-gradient(circle at center,#21163f,#090b16)}.youtube-placeholder-inner{max-width:620px}.youtube-placeholder .youtube-icon{font-size:54px;margin-bottom:14px}.youtube-placeholder h3{margin:0 0 10px;font-size:26px}.youtube-placeholder p{margin:0 0 22px;color:var(--muted);line-height:1.6}.youtube-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:18px}.youtube-video{display:block;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#0d1020;color:white;text-decoration:none;transition:.2s}.youtube-video:hover{transform:translateY(-4px);border-color:#596182}.youtube-video img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#090b16}.youtube-video-info{padding:14px}.youtube-video-info h4{margin:0 0 7px;font-size:16px;line-height:1.35}.youtube-video-info span{color:var(--muted);font-size:12px}.youtube-loading{grid-column:1/-1;text-align:center;color:var(--muted);padding:35px}.tiktok-profile,.twitch-preview{position:relative;width:100%;margin:0;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,#111526,#090b16);box-shadow:0 18px 45px #0004;height:560px;display:flex;flex-direction:column}.tiktok-profile blockquote{margin:0!important;width:100%!important;max-width:100%!important;min-width:288px!important;flex:1;overflow:hidden}.tiktok-profile blockquote section{padding-bottom:20px}.twitch-preview iframe{display:block;width:100%;height:455px;border:0;flex:1}.twitch-note{padding:12px 16px;color:var(--muted);font-size:12px;background:#0d1020;border-top:1px solid var(--line);min-height:45px}.twitch-note strong{color:#fff}.twitch-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 18px;background:linear-gradient(135deg,#14182a,#0b0e1b);min-height:90px}.twitch-head h3{margin:0 0 5px;font-size:21px}.twitch-head p{margin:0;color:var(--muted);line-height:1.4;font-size:13px}.twitch-head .btn{white-space:nowrap;padding:10px 13px;font-size:13px}@media(max-width:760px){.media-grid{grid-template-columns:1fr}.youtube-list{grid-template-columns:1fr}.platform-head,.twitch-head{display:block}.platform-head .btn,.twitch-head .btn{display:inline-flex;margin-top:16px}.youtube-placeholder{min-height:300px;padding:24px}.tiktok-profile,.twitch-preview{width:100%;height:540px}.twitch-preview iframe{height:435px}.twitch-note{min-height:55px}}
+.game-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.game-card{display:block;overflow:hidden;position:relative;min-height:230px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,#15192b,#0d1020);text-decoration:none;color:white;box-shadow:0 18px 45px #0004;transition:.2s}.game-card:hover{transform:translateY(-5px);border-color:#596182}.game-card img{display:block;width:100%;height:145px;object-fit:contain;padding:24px;background:radial-gradient(circle at center,#252b49,#090b15)}.game-info{padding:16px 18px 18px}.game-info h3{margin:0 0 5px;font-size:20px}.game-info span{color:var(--muted);font-size:13px}.game-arrow{float:right;color:var(--accent2);font-weight:900}
+@media(max-width:900px){.game-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.game-grid{grid-template-columns:1fr}}
+</style>
+
+<style>
+.page-divider{position:relative;height:110px;margin:0;overflow:hidden;display:flex;align-items:center;justify-content:center}.page-divider:before{content:"";position:absolute;left:-10%;width:120%;height:1px;background:linear-gradient(90deg,transparent,#8b5cf6,#22d3ee,#8b5cf6,transparent);box-shadow:0 0 18px #22d3ee88;animation:dividerGlow 3s ease-in-out infinite}.page-divider:after{content:"NOXXY";position:relative;padding:9px 18px;border:1px solid #3b3560;border-radius:999px;background:#0b0e1b;color:#a7aec7;font-size:11px;font-weight:900;letter-spacing:.28em;box-shadow:0 0 30px #8b5cf633;animation:dividerFloat 2.8s ease-in-out infinite}@keyframes dividerGlow{0%,100%{transform:scaleX(.7);opacity:.55}50%{transform:scaleX(1);opacity:1}}@keyframes dividerFloat{0%,100%{transform:translateY(0);box-shadow:0 0 20px #8b5cf622}50%{transform:translateY(-4px);box-shadow:0 0 35px #22d3ee44}}
+@media(prefers-reduced-motion:reduce){.page-divider:before,.page-divider:after{animation:none}}
+</style>
+
+<style>
+main>.section{position:relative}
+main>.section:before{content:"";display:block;height:110px;margin:-34px 0 34px;position:relative;background:linear-gradient(90deg,transparent 0%,#8b5cf6 28%,#22d3ee 50%,#8b5cf6 72%,transparent 100%) center 50%/100% 1px no-repeat;filter:drop-shadow(0 0 10px #22d3ee88);animation:sectionDivider 3s ease-in-out infinite}
+main>.section:after{content:"NOXXY";position:absolute;top:18px;left:50%;transform:translateX(-50%);padding:8px 17px;border:1px solid #3b3560;border-radius:999px;background:#0b0e1b;color:#a7aec7;font-size:10px;font-weight:900;letter-spacing:.28em;box-shadow:0 0 28px #8b5cf633;animation:sectionBadge 2.8s ease-in-out infinite}
+@keyframes sectionDivider{0%,100%{opacity:.55;transform:scaleX(.72)}50%{opacity:1;transform:scaleX(1)}}
+@keyframes sectionBadge{0%,100%{margin-top:0;box-shadow:0 0 20px #8b5cf622}50%{margin-top:-4px;box-shadow:0 0 34px #22d3ee44}}
+@media(max-width:760px){main>.section:before{height:85px;margin:-20px 0 25px}main>.section:after{top:12px}}
+@media(prefers-reduced-motion:reduce){main>.section:before,main>.section:after{animation:none}}
+</style>
+</head>
+
+<body>
+<div class="app">
+<div class="container">
+
+<header class="nav">
+<div class="brand">NOXX<span>Y</span></div>
+<nav>
+<a href="#reseaux">Réseaux</a>
+<a href="#videos">Vidéos</a>
+<a href="#parcours">Parcours</a>
+<a href="#jeux">Jeux</a>
+</nav>
+</header>
+
+<main>
+
+<section class="hero">
+<div class="badge">🎮 GAMING CREATOR • FR</div>
+<h1><span class="gradient">NOXXY</span></h1>
+<p>Bienvenue sur le hub officiel de Noxxy-A2F. Retrouve mes contenus, mes lives, ma communauté et mes différents réseaux au même endroit.</p>
+<div class="actions">
+<a class="btn primary" href="https://www.youtube.com/@Noxxy-A2F" target="_blank">▶ YouTube</a>
+<a class="btn" href="https://www.tiktok.com/@noxxy663" target="_blank">♪ TikTok</a>
+<a class="btn" href="https://www.twitch.tv/noxxy7709" target="_blank">◉ Twitch</a>
+</div>
+</section>
+
+<section class="section" id="reseaux">
+<h2>Mes réseaux</h2>
+<p class="lead">Un clic pour rejoindre Noxxy sur chaque plateforme.</p>
+<div class="grid">
+
+<article class="card">
+<div>
+<div class="icon">▶️</div>
+<h3>YouTube</h3>
+<p>Vidéos, Shorts, gaming et futures séries.</p>
+</div>
+<a href="https://www.youtube.com/@Noxxy-A2F" target="_blank">Ouvrir la chaîne →</a>
+</article>
+
+<article class="card">
+<div>
+<div class="icon">🎵</div>
+<h3>TikTok</h3>
+<p>Clips courts, moments gaming et contenu rapide.</p>
+</div>
+<a href="https://www.tiktok.com/@noxxy663" target="_blank">Ouvrir TikTok →</a>
+</article>
+
+<article class="card">
+<div>
+<div class="icon">🟣</div>
+<h3>Twitch</h3>
+<p>Lives, sessions gaming et interaction avec la communauté.</p>
+</div>
+<a href="https://www.twitch.tv/noxxy7709" target="_blank">Ouvrir Twitch →</a>
+</article>
+
+</div>
+</section>
+
+<section class="section" id="videos">
+<h2>Mes contenus</h2>
+<p class="lead">Retrouve mes dernières vidéos et mes lives directement ici.</p>
+
+<div class="platform-preview">
+<div class="platform-head">
+<div>
+<h3>▶️ YouTube</h3>
+<p>Les dernières vidéos de Noxxy-A2F</p>
+</div>
+<a class="btn primary" href="https://www.youtube.com/@Noxxy-A2F/videos" target="_blank" rel="noopener">Voir mes vidéos →</a>
+</div>
+
+<div class="youtube-placeholder">
+<div class="youtube-placeholder-inner">
+<div class="youtube-icon">▶️</div>
+<h3>Mes dernières vidéos YouTube</h3>
+<p>La mise à jour automatique sera ajoutée plus tard. En attendant, retrouve toutes mes vidéos directement sur ma chaîne.</p>
+<a class="btn primary" href="https://www.youtube.com/@Noxxy-A2F/videos" target="_blank" rel="noopener">Ouvrir ma chaîne YouTube →</a>
+</div>
+</div>
+</div>
+
+<div class="media-grid">
+
+<div class="tiktok-profile">
+<div class="platform-head">
+<div>
+<h3>🎵 TikTok</h3>
+<p>Profil et dernières vidéos de @noxxy663</p>
+</div>
+<a class="btn" href="https://www.tiktok.com/@noxxy663" target="_blank" rel="noopener">Ouvrir TikTok →</a>
+</div>
+
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@noxxy663" data-unique-id="noxxy663" data-embed-type="creator" style="max-width:100%;min-width:288px;width:100%;">
+<section>
+<a target="_blank" href="https://www.tiktok.com/@noxxy663?refer=creator_embed">@noxxy663</a>
+</section>
+</blockquote>
+</div>
+
+<div class="twitch-preview">
+<div class="twitch-head">
+<div>
+<h3>🟣 Twitch</h3>
+<p>Live de Noxxy7709</p>
+</div>
+<a class="btn" href="https://www.twitch.tv/noxxy7709" target="_blank" rel="noopener">Ouvrir Twitch →</a>
+</div>
+
+<iframe src="https://player.twitch.tv/?channel=noxxy7709&amp;parent=mikaelkaiser310-png.github.io&amp;autoplay=false" title="Twitch de Noxxy7709" loading="lazy" allowfullscreen></iframe>
+
+<div class="twitch-note">
+<strong>Hors ligne ?</strong> Le lecteur Twitch affiche automatiquement le live quand la chaîne est en direct. Pour revoir les anciens lives et les clips, utilise le bouton « Ouvrir Twitch ».
+</div>
+</div>
+
+</div>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
+</section>
+
+<section class="section" id="parcours">
+<h2>Mon parcours</h2>
+<p class="lead">De joueur passionné à créateur gaming multi-plateforme.</p>
+
+<div class="timeline">
+
+<div class="step">
+<span class="dot"></span>
+<div class="year">Chapitre 2 — Saison 7</div>
+<h3>🎮 Débuts sur Fortnite</h3>
+<p>Début du parcours gaming sur Fortnite et développement progressif du niveau de jeu.</p>
+</div>
+
+<div class="step">
+<span class="dot"></span>
+<div class="year">Période compétitive</div>
+<h3>🏆 Progression & esport</h3>
+<p>Recherche de progression, intérêt pour les tournois et environnement EOZ Esport.</p>
+</div>
+
+<div class="step">
+<span class="dot"></span>
+<div class="year">Création de contenu</div>
+<h3>🎥 Naissance de Noxxy-A2F</h3>
+<p>Le gaming devient aussi un projet de création : clips, vidéos et développement d'une identité.</p>
+</div>
+
+<div class="step">
+<span class="dot"></span>
+<div class="year">Multi-plateforme</div>
+<h3>📱 YouTube + TikTok + Twitch</h3>
+<p>Développement des différents comptes pour toucher une audience et créer une communauté.</p>
+</div>
+
+<div class="step">
+<span class="dot"></span>
+<div class="year">2026</div>
+<h3>🚀 Construction de NOXXY</h3>
+<p>Structuration de la marque, Discord, séries YouTube, formats courts et volonté de professionnaliser la production.</p>
+</div>
+
+</div>
+</section>
+
+<div class="page-divider" aria-hidden="true"></div>
+
+<section class="section" id="jeux">
+<h2>Univers gaming</h2>
+<p class="lead">Les jeux associés au contenu et aux centres d'intérêt de Noxxy. Clique sur un jeu pour accéder à son site officiel.</p>
+
+<div class="game-grid">
+
+<a class="game-card" href="https://www.fortnite.com/" target="_blank" rel="noopener">
+<img src="https://cartedirecte.fr/cdn-cgi/imagedelivery/Pk8Ky-xDyeK8TLUvfplArQ/gaming-fortnite-banner-1691167800.pngv2-staging-1737042778.934/public" alt="Fortnite">
+<div class="game-info">
+<h3>Fortnite <span class="game-arrow">↗</span></h3>
+<span>Site officiel</span>
+</div>
+</a>
+
+<a class="game-card" href="https://www.rocketleague.com/" target="_blank" rel="noopener">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Rocket_League_logo.svg" alt="Rocket League">
+<div class="game-info">
+<h3>Rocket League <span class="game-arrow">↗</span></h3>
+<span>Site officiel</span>
+</div>
+</a>
+
+<a class="game-card" href="https://forza.net/fr-FR" target="_blank" rel="noopener">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Forza_new_logo.png" alt="Forza Horizon">
+<div class="game-info">
+<h3>Forza Horizon <span class="game-arrow">↗</span></h3>
+<span>Site officiel Forza</span>
+</div>
+</a>
+
+<a class="game-card" href="https://www.ea.com/fr/games/f1/f1-25" target="_blank" rel="noopener">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/F1_25_logo.png" alt="F1 25">
+<div class="game-info">
+<h3>F1 25 <span class="game-arrow">↗</span></h3>
+<span>Site officiel EA</span>
+</div>
+</a>
+
+<a class="game-card" href="https://www.callofduty.com/fr/warzone" target="_blank" rel="noopener">
+<img src="https://s1.dmcdn.net/v/aSK2q1fpU_CDHBsDF/x720" alt="Call of Duty Warzone">
+<div class="game-info">
+<h3>Call of Duty: Warzone <span class="game-arrow">↗</span></h3>
+<span>Site officiel Call of Duty</span>
+</div>
+</a>
+
+<a class="game-card" href="https://www.roblox.com/" target="_blank" rel="noopener">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Roblox_Logo_2025.png" alt="Roblox">
+<div class="game-info">
+<h3>Roblox <span class="game-arrow">↗</span></h3>
+<span>Site officiel</span>
+</div>
+</a>
+
+</div>
+</section>
+
+</main>
+
+<footer class="footer">
+<div>© 2026 NOXXY-A2F</div>
+<div>Gaming • Compétition • Automobile • Communauté</div>
+</footer>
+
+</div>
+</div>
+</body>
+</html>
