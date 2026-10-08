@@ -61,7 +61,15 @@ body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui
 </style>
 
 <style>
-.media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+.media-frame{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:22px;background:#090b16;box-shadow:0 18px 45px #0004}
+.media-frame iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+
+.media-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:16px
+}
 
 .platform-preview{
 position:relative;
@@ -70,6 +78,13 @@ border:1px solid var(--line);
 border-radius:22px;
 background:#090b16;
 box-shadow:0 18px 45px #0004
+}
+
+.platform-preview iframe{
+display:block;
+width:100%;
+aspect-ratio:16/9;
+border:0
 }
 
 .platform-head{
@@ -100,6 +115,42 @@ background:radial-gradient(circle at center,#21163f,#090b16)
 .youtube-placeholder h3{margin:0 0 10px;font-size:26px}
 .youtube-placeholder p{margin:0 0 22px;color:var(--muted);line-height:1.6}
 
+.youtube-list{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+padding:18px
+}
+
+.youtube-video{
+display:block;
+overflow:hidden;
+border:1px solid var(--line);
+border-radius:18px;
+background:#0d1020;
+color:white;
+text-decoration:none;
+transition:.2s
+}
+
+.youtube-video:hover{
+transform:translateY(-4px);
+border-color:#596182
+}
+
+.youtube-video img{
+display:block;
+width:100%;
+aspect-ratio:16/9;
+object-fit:cover;
+background:#090b16
+}
+
+.youtube-video-info{padding:14px}
+.youtube-video-info h4{margin:0 0 7px;font-size:16px;line-height:1.35}
+.youtube-video-info span{color:var(--muted);font-size:12px}
+.youtube-loading{grid-column:1/-1;text-align:center;color:var(--muted);padding:35px}
+
 .tiktok-profile,.twitch-preview{
 position:relative;
 width:100%;
@@ -113,6 +164,36 @@ height:560px;
 display:flex;
 flex-direction:column
 }
+
+.tiktok-profile blockquote{
+margin:0!important;
+width:100%!important;
+max-width:100%!important;
+min-width:288px!important;
+flex:1;
+overflow:hidden
+}
+
+.tiktok-profile blockquote section{padding-bottom:20px}
+
+.twitch-preview iframe{
+display:block;
+width:100%;
+height:455px;
+border:0;
+flex:1
+}
+
+.twitch-note{
+padding:12px 16px;
+color:var(--muted);
+font-size:12px;
+background:#0d1020;
+border-top:1px solid var(--line);
+min-height:45px
+}
+
+.twitch-note strong{color:#fff}
 
 .twitch-head{
 display:flex;
@@ -130,14 +211,15 @@ min-height:90px
 
 @media(max-width:760px){
 .media-grid{grid-template-columns:1fr}
+.youtube-list{grid-template-columns:1fr}
 .platform-head,.twitch-head{display:block}
 .platform-head .btn,.twitch-head .btn{display:inline-flex;margin-top:16px}
 .youtube-placeholder{min-height:300px;padding:24px}
 .tiktok-profile,.twitch-preview{width:100%;height:540px}
+.twitch-preview iframe{height:435px}
+.twitch-note{min-height:55px}
 }
-</style>
 
-<style>
 .game-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -205,7 +287,8 @@ left:-10%;
 width:120%;
 height:1px;
 background:linear-gradient(90deg,transparent,#8b5cf6,#22d3ee,#8b5cf6,transparent);
-box-shadow:0 0 18px #22d3ee88
+box-shadow:0 0 18px #22d3ee88;
+animation:dividerGlow 3s ease-in-out infinite
 }
 
 .page-divider:after{
@@ -219,7 +302,18 @@ color:#a7aec7;
 font-size:11px;
 font-weight:900;
 letter-spacing:.28em;
-box-shadow:0 0 30px #8b5cf633
+box-shadow:0 0 30px #8b5cf633;
+animation:dividerFloat 2.8s ease-in-out infinite
+}
+
+@keyframes dividerGlow{
+0%,100%{transform:scaleX(.7);opacity:.55}
+50%{transform:scaleX(1);opacity:1}
+}
+
+@keyframes dividerFloat{
+0%,100%{transform:translateY(0);box-shadow:0 0 20px #8b5cf622}
+50%{transform:translateY(-4px);box-shadow:0 0 35px #22d3ee44}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -237,7 +331,8 @@ height:110px;
 margin:-34px 0 34px;
 position:relative;
 background:linear-gradient(90deg,transparent 0%,#8b5cf6 28%,#22d3ee 50%,#8b5cf6 72%,transparent 100%) center 50%/100% 1px no-repeat;
-filter:drop-shadow(0 0 10px #22d3ee88)
+filter:drop-shadow(0 0 10px #22d3ee88);
+animation:sectionDivider 3s ease-in-out infinite
 }
 
 main>.section:after{
@@ -254,7 +349,18 @@ color:#a7aec7;
 font-size:10px;
 font-weight:900;
 letter-spacing:.28em;
-box-shadow:0 0 28px #8b5cf633
+box-shadow:0 0 28px #8b5cf633;
+animation:sectionBadge 2.8s ease-in-out infinite
+}
+
+@keyframes sectionDivider{
+0%,100%{opacity:.55;transform:scaleX(.72)}
+50%{opacity:1;transform:scaleX(1)}
+}
+
+@keyframes sectionBadge{
+0%,100%{margin-top:0;box-shadow:0 0 20px #8b5cf622}
+50%{margin-top:-4px;box-shadow:0 0 34px #22d3ee44}
 }
 
 @media(max-width:760px){
@@ -274,6 +380,7 @@ main>.section:before,main>.section:after{animation:none}
 
 <header class="nav">
 <div class="brand">NOXX<span>Y</span></div>
+
 <nav>
 <a href="#reseaux">Réseaux</a>
 <a href="#videos">Vidéos</a>
@@ -527,7 +634,7 @@ Clique sur un jeu pour accéder à son site officiel.
 <div class="game-grid">
 
 <a class="game-card" href="https://www.fortnite.com/" target="_blank" rel="noopener">
-<img src="https://cartedirecte.fr/cdn-cgi/imagedelivery/Pk8Ky-xDyeK8TLUvfplArQ/gaming-fortnite-banner-1691167800.pngv2-staging-1737042778.934/public" alt="Fortnite">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Fortnite_Battle_Royale_2022_Logo.png" alt="Fortnite">
 <div class="game-info">
 <h3>Fortnite <span class="game-arrow">↗</span></h3>
 <span>Site officiel</span>
@@ -559,7 +666,7 @@ Clique sur un jeu pour accéder à son site officiel.
 </a>
 
 <a class="game-card" href="https://www.callofduty.com/fr/warzone" target="_blank" rel="noopener">
-<img src="https://s1.dmcdn.net/v/aSK2q1fpU_CDHBsDF/x720" alt="Call of Duty Warzone">
+<img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Call_of_Duty_Warzone_Logo.png" alt="Call of Duty Warzone">
 <div class="game-info">
 <h3>Call of Duty: Warzone <span class="game-arrow">↗</span></h3>
 <span>Site officiel Call of Duty</span>
